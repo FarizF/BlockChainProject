@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-sm-3">
+
+    <div class="card border-0" *ngFor="let s of shipments, index as i">
+      <div class="card-body">
+        <h5 class="card-title">Shipment</h5>
+        <h6 class="card-subtitle mb-2 text-muted"> {{ s.id }} </h6>
+
+        <ul class="list-group mb-4 mt-4">
+          <li class="list-group-item">Status: <strong>{{ s.status }}</strong></li>
+          <li class="list-group-item">Created: {{ s.creationTimestamp | date }}</li>
+          <li class="list-group-item">Started: {{ s.startTimestamp | date }} </li>
+          <li class="list-group-item">Ended: {{ s.endTimestamp | date }} </li>
+          <li class="list-group-item">Shipper: {{ s.shipperId }}</li>
+          <li class="list-group-item">Client: {{ s.customerId }}</li>
+          <li class="list-group-item">From: Bergen Port (Norway)</li>
+          <li class="list-group-item">To: Rotterdam Port (Netherlands)</li>        
+        </ul>
+
+        <a *ngIf="s.status == 'CREATED'" href="#" class="btn btn-primary mr-2" (click)="startShipment(s.id, i)">Start</a>
+        <a *ngIf="s.status == 'INTRANSIT'" href="#" class="btn btn-danger" (click)="endShipment(s.id, i)">Stop</a>
+        <a *ngIf="s.status == 'ARRIVED'" href="#" class="btn btn-danger" data-toggle="modal" data-target="#qaModal" (click)="getQualityAssuranceInformation(s.id) ">Quality Assurance Information</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-sm-9">
+    <app-agreements></app-agreements>
+  </div>
+</div>
+
+<div id="qaModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Quality Assurance Information</h4>
+        </div>
+        <div class="modal-body" >
+          <h5 class="mb-4">Irregularities on Transit Agreements</h5>
+          <h6 *ngIf="irregularities.length == 0">No irregularities found</h6>
+          <div *ngFor="let irr of irregularities">
+            <div *ngFor="let ct of irr | keyvalue">
+              <h6 class="mt-4">Container {{ ct.key }}</h6>
+              <ul class="list-group">
+                <li *ngFor="let x of ct.value" class="list-group-item">{{ x }}</li>
+              </ul>
+            </div>            
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  </div>
+  </div>

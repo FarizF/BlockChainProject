@@ -1,0 +1,23 @@
+{
+    "name": "back-end",
+    "version": "1.0.0",
+    "description": "Shipment Client Exposed as a RESTful API",
+    "main": "app.js",
+    "scripts": {
+        "start": "./node_modules/nodemon/bin/nodemon.js src/app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "MFK",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "fabric-ca-client": "^1.4.4",
+        "fabric-client": "^1.4.4",
+        "fabric-network": "^1.4.4",
+        "nodemon": "^2.0.1",
+        "rimraf": "^3.0.0",
+        "ws": "^7.2.0"
+    }
+}

@@ -1,0 +1,152 @@
+<style>
+  .carousel-control-next,
+  .carousel-control-prev {
+    filter: invert(100%);
+  }
+
+  .carousel-indicators {
+    filter: invert(100%);
+  }
+</style>
+
+<div class="card border-0">
+  <div class="card-body">
+    <h5 class="card-title">Agreements</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Agreement #1</h6>
+
+    <div class="row mb-3 border bg-light">
+      <div class="col-lg-3">
+        <div class="card border-0 bg-light">
+          <div class="card-body">
+            <h5 class="card-title">Temperature</h5>
+            <p class="card-text"><small>Generally applicable zones of optimum temperatures for transported fish</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+          <!-- Carousel indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+          <!-- Wrapper for carousel items -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+                <app-line-chart container="FreightContainer-ML-1" sensor="TEMPERATURE" [min]='22' [max]='26'></app-line-chart>
+            </div>
+            <div class="carousel-item">
+              <app-line-chart container="FreightContainer-ML-2" sensor="TEMPERATURE" [min]='22' [max]='26'></app-line-chart>
+            </div>
+            <div class="carousel-item">
+              <app-line-chart container="FreightContainer-ML-3" sensor="TEMPERATURE" [min]='22' [max]='26'></app-line-chart>
+            </div>
+          </div>
+          <!-- Carousel controls -->
+          <!-- <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a> -->
+        </div>
+
+      </div>
+
+    </div> <!-- row -->
+
+    <div class="row mb-4 border bg-light">
+      <div class="col-lg-3">
+        <div class="card border-0 bg-light">
+          <div class="card-body bg-light">
+            <h5 class="card-title">Humidity</h5>
+            <p class="card-text"><small>Generally applicable zones of optimum humidity for transported fish</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+
+        <div id="myCarousel2" class="carousel slide" data-ride="carousel" data-interval="false">
+          <!-- Carousel indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel2" data-slide-to="1"></li>
+            <li data-target="#myCarousel2" data-slide-to="2"></li>
+          </ol>
+          <!-- Wrapper for carousel items -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <app-line-chart container="FreightContainer-ML-1" sensor="HUMIDITY" [min]='35' [max]='65'></app-line-chart>
+            </div>
+            <div class="carousel-item">
+              <app-line-chart container="FreightContainer-ML-2" sensor="HUMIDITY" [min]='35' [max]='65'></app-line-chart>
+            </div>
+            <div class="carousel-item">
+              <app-line-chart container="FreightContainer-ML-3" sensor="HUMIDITY" [min]='35' [max]='65'></app-line-chart>
+            </div>
+          </div>
+          <!-- Carousel controls -->
+          <!-- <a class="carousel-control-prev" href="#myCarousel2" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel2" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a> -->
+        </div>
+
+      </div>
+
+    </div> <!-- row -->    
+
+    <div class="row mb-4 border bg-light">
+      <div class="col-lg-3">
+        <div class="card border-0 bg-light">
+          <div class="card-body">
+            <h5 class="card-title">Door</h5>
+            <p class="card-text"><small>Door must be locked (value 0) during transport</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+
+        <div id="myCarousel3" class="carousel slide" data-ride="carousel" data-interval="false">
+          <!-- Carousel indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel3" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel3" data-slide-to="1"></li>
+            <li data-target="#myCarousel3" data-slide-to="2"></li>
+          </ol>
+          <!-- Wrapper for carousel items -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <app-line-chart container="FreightContainer-ML-1" sensor="DOOR" [min]='-1' [max]='2'></app-line-chart>
+            </div>
+            <div class="carousel-item">
+              <app-line-chart container="FreightContainer-ML-2" sensor="DOOR" [min]='-1' [max]='2'></app-line-chart>
+            </div>
+            <div class="carousel-item">
+              <app-line-chart container="FreightContainer-ML-3" sensor="DOOR" [min]='-1' [max]='2'></app-line-chart>
+            </div>
+          </div>
+          <!-- Carousel controls -->
+          <!-- <a class="carousel-control-prev" href="#myCarousel2" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel2" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a> -->
+        </div>
+
+      </div>
+
+    </div> <!-- row -->       
+
+    
+
+  </div>
+</div>
